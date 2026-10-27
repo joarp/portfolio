@@ -57,6 +57,28 @@
       height: auto;
     }
   }
+
+  .project-card-large {
+  height: auto;          /* let the card grow to fit its content */
+  min-height: 320px;     /* adjust to taste */
+}
+
+.project-card-large .img-stack {
+  display: flex;
+  flex-direction: column;   /* stack images vertically */
+  gap: 0.75rem;
+  padding: 0.75rem;
+  width: 100%;
+}
+
+.project-card-large .img-stack img {
+  width: 100%;
+  height: auto;
+}
+
+.card-link + .card-link {
+    margin-left: 0.5rem; 
+    }
 </style>
 
 <body>
@@ -86,24 +108,28 @@
   <div class="main-content mx-auto" style="max-width: 800px;">
     
       <div class="mt-3 d-flex justify-content-center"><h1>Hello, I'm Joar.</h1></div>
-<p class="below-header"> Welcome to my portfolio. I'm a final-semester M.Sc. Machine Learning student at KTH with a strong mathematical background. My portfolio features projects on different AI topics, including research based projects on generative AI and prediction based ML, but also more complete pipelines with dynamic data and user interfaces.</p>
+<p class="below-header"> Welcome to my portfolio. I hold an M.Sc. in Engineering Mathematics from KTH Royal Institute of Technology, specializing in Machine Learning. My background combines a strong foundation in mathematics, programming, and engineering with expertise in artificial intelligence, deep learning, and data analysis. Alongside my academic experience, I have worked with industrial operations and technical systems, giving me both theoretical knowledge and hands-on technical experience.</p>
     
     <div class="mb-3" id="Projects"><h4>Recent projects</h4></div>
 
-      <div class="card mb-3 project-card">
+      <div class="card mb-3 project-card project-card-large">
         <div class="row g-0 h-100">
           <div class="col-4 d-flex align-items-center">
-            <img src="assets/citybike_agentic_structure.png" class="img-fluid rounded-start" alt="...">
+            <div class="img-stack">
+              <img src="assets/action_recognition.png" class="img-fluid rounded-start" alt="Action recognition example">
+              <img src="assets/framework_overview.png" class="img-fluid rounded-start" alt="Framework overview">
+            </div>
           </div>
           <div class="col-8">
             <div class="card-body">
-              <h5 class="card-title">Citybike Relancing Agent</h5>
+              <h5 class="card-title">MSc Thesis on Human Action Recogntion</h5>
               <div class="mb-2 d-none d-md-block">
+                <span class="project-tag">Computer Vision </span>
+                <span class="project-tag">Human Action Recognition</span>
                 <span class="project-tag">LLM</span>
-                <span class="project-tag">RAG</span>
               </div>
-              <p class="card-text">Toy project to test the scalability of an agentic framework for a logical planning task (rebalancing of citybikes). An agentic loop with multiple LLM and tool calls is used together with a RAG pipeline using Hopsworks feature store.  The LLM (gpt-4o-mini) is called using in-context learning.</p>
-              <a class="card-link" href="https://github.com/joarp/citybike-rebalancing-agent" target="_blank">GitHub</a> <small class="text-body-secondary">(2025)</small>
+              <p class="card-text">Developed a fixed-prototype framework for skeleton-based class-incremental action recognition, reducing catastrophic forgetting and recency bias. Outperformed previous state-of-the-art methods across all eight evaluated settings, with accuracy gains of up to 5.6 percentage points and no additional inference cost. Also explored an LLM-guided variant using Claude-generated action descriptions and CLIP-based text embeddings.</p>
+              <a class="card-link" href="https://www.diva-portal.org/" target="_blank">(Publishing in process, ETA: Nov 2026)</a>
             </div>
           </div>
         </div>
@@ -123,7 +149,7 @@
                 <span class="project-tag">Image generation</span>
               </div>
               <p class="card-text">Evaluating and extending MeanFlows for one-step generative modeling with resource constraints. The project was conducted as a group project within the deep learning advanced course (DD2610) at KTH.</p>
-              <a class="card-link" href="https://github.com/joarp/meanflow-reproducibility" target="_blank">GitHub</a> <small class="text-body-secondary">(2025)</small>
+              <a class="card-link" href="https://github.com/joarp/meanflow-reproducibility" target="_blank">GitHub</a><a class="card-link" href="https://joarp.github.io/portfolio/pdf_meanflow/" target="_blank">Report</a> <small class="text-body-secondary">(2025)</small>
             </div>
           </div>
         </div>
@@ -139,6 +165,25 @@
               <h5 class="card-title">BSc Thesis</h5>
               <p class="card-text">With the title "Forecasting Solar Energy Production in Stockholm Using Tree-based Machine Learning Algorithms" I used weather data from SMHI to predict solar energy output from one of Stockholm stads photovoltaic plants.</p>
               <a class="card-link" href="https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1877838&dswid=2989" target="_blank">Publication</a> <small class="text-body-secondary">(2024)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 project-card">
+        <div class="row g-0 h-100">
+          <div class="col-4 d-flex align-items-center">
+            <img src="assets/citybike_agentic_structure.png" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title">Citybike Relancing Agent</h5>
+              <div class="mb-2 d-none d-md-block">
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">RAG</span>
+              </div>
+              <p class="card-text">Project to test the scalability of an agentic framework for a logical planning task (rebalancing of citybikes). An agentic loop with multiple LLM and tool calls is used together with a RAG pipeline using Hopsworks feature store.  The LLM (gpt-4o-mini) is called using in-context learning.</p>
+              <a class="card-link" href="https://github.com/joarp/citybike-rebalancing-agent" target="_blank">GitHub</a> <small class="text-body-secondary">(2025)</small>
             </div>
           </div>
         </div>
